@@ -1,0 +1,48 @@
+{
+    "name": "Curso",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "profesor",
+            "otherEntityRelationshipName": "curso",
+            "relationshipName": "profesor",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "periodo",
+            "otherEntityRelationshipName": "curso",
+            "relationshipName": "periodo",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estudiante",
+            "otherEntityRelationshipName": "curso",
+            "relationshipName": "estudiante",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191214010123",
+    "entityTableName": "curso",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

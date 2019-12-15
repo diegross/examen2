@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="curso">
+            <h2><span>Curso</span> {{curso.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nombre</span></dt>
+                <dd>
+                    <span>{{curso.nombre}}</span>
+                </dd>
+                <dt><span>Estado</span></dt>
+                <dd>
+                    <span>{{curso.estado}}</span>
+                </dd>
+                <dt><span>Profesor</span></dt>
+                <dd>
+                    <div *ngIf="curso.profesor">
+                        <a [routerLink]="['/profesor', curso.profesor?.id, 'view']">{{curso.profesor?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Periodo</span></dt>
+                <dd>
+                    <div *ngIf="curso.periodo">
+                        <a [routerLink]="['/periodo', curso.periodo?.id, 'view']">{{curso.periodo?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Estudiante</span></dt>
+                <dd>
+                    <div *ngIf="curso.estudiante">
+                        <a [routerLink]="['/estudiante', curso.estudiante?.id, 'view']">{{curso.estudiante?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/curso', curso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

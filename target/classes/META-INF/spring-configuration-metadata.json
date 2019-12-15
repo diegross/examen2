@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.cenfotec.examen2.config.ApplicationProperties",
+      "sourceType": "com.cenfotec.examen2.config.ApplicationProperties"
+    },
+    {
+      "name": "spring.datasource.hikari",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.cenfotec.examen2.config.CloudDatabaseConfiguration",
+      "sourceMethod": "dataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

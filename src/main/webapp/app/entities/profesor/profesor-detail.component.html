@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="profesor">
+            <h2><span>Profesor</span> {{profesor.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nombre</span></dt>
+                <dd>
+                    <span>{{profesor.nombre}}</span>
+                </dd>
+                <dt><span>Primer Apellido</span></dt>
+                <dd>
+                    <span>{{profesor.primerApellido}}</span>
+                </dd>
+                <dt><span>Segundo Apellido</span></dt>
+                <dd>
+                    <span>{{profesor.segundoApellido}}</span>
+                </dd>
+                <dt><span>Genero</span></dt>
+                <dd>
+                    <span>{{profesor.genero}}</span>
+                </dd>
+                <dt><span>Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{profesor.fechaNacimiento}}</span>
+                </dd>
+                <dt><span>Fecha Contratacion</span></dt>
+                <dd>
+                    <span>{{profesor.fechaContratacion}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/profesor', profesor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

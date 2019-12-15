@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="periodo">
+            <h2><span>Periodo</span> {{periodo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nombre</span></dt>
+                <dd>
+                    <span>{{periodo.nombre}}</span>
+                </dd>
+                <dt><span>Fecha Inicio</span></dt>
+                <dd>
+                    <span>{{periodo.fechaInicio}}</span>
+                </dd>
+                <dt><span>Fecha Fin</span></dt>
+                <dd>
+                    <span>{{periodo.fechaFin}}</span>
+                </dd>
+                <dt><span>Estado</span></dt>
+                <dd>
+                    <span>{{periodo.estado}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/periodo', periodo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

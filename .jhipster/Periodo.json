@@ -1,0 +1,32 @@
+{
+    "name": "Periodo",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaInicio",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechaFin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191214010125",
+    "entityTableName": "periodo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

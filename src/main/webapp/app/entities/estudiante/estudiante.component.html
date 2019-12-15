@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span>Estudiantes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-estudiante" [routerLink]="['/estudiante/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new Estudiante
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="estudiantes?.length === 0">
+        <span>No estudiantes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="estudiantes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span>ID</span></th>
+            <th scope="col" ><span>Nombre</span></th>
+            <th scope="col" ><span>Primer Apellido</span></th>
+            <th scope="col" ><span>Segundo Apellido</span></th>
+            <th scope="col" ><span>Genero</span></th>
+            <th scope="col" ><span>Fecha Nacimiento</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let estudiante of estudiantes ;trackBy: trackId">
+                <td><a [routerLink]="['/estudiante', estudiante.id, 'view' ]">{{estudiante.id}}</a></td>
+                <td>{{estudiante.nombre}}</td>
+                <td>{{estudiante.primerApellido}}</td>
+                <td>{{estudiante.segundoApellido}}</td>
+                <td>{{estudiante.genero}}</td>
+                <td>{{estudiante.fechaNacimiento | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/estudiante', estudiante.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/estudiante', estudiante.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/estudiante', { outlets: { popup: estudiante.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
